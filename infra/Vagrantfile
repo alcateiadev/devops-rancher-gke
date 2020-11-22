@@ -7,6 +7,7 @@ Vagrant.configure('2') do |config|
     vb.memory = '4096'
   end
 
+  config.vm.network "public_network", ip: "192.168.0.55"
   config.vm.synced_folder '.', '/vagrant', owner: 'vagrant', group: 'root'
 
   config.vm.provision 'shell', inline: <<-SHELL
@@ -29,9 +30,18 @@ Vagrant.configure('2') do |config|
     curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
 
-    git clone https://github.com/deviantony/docker-elk
-    cd docker-elk
-    docker-compose up
+    git clone https://github.com/alcateiadev/devops-rancher-gke.git
+    cd devops-rancher-gke 
+    cd infra/docker-elk/
+    docker-compose up -d
+    cd ..
+    cd sonar
+    docker-compose up -d
+    cd ..
+    docker-compose -f docker-kafka.yml up -d
+    docker-compose -f docker-postgres.yml up -d
+    docker-compose -f nginx.yml up -d
+
 
   SHELL
 
