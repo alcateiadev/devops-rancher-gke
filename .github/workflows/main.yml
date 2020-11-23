@@ -1,6 +1,8 @@
 name: Projeto Gnus - Rancher
  
-on: [push]
+on:
+  push:
+    branches: [ develop ]
  
 jobs:
   build:
