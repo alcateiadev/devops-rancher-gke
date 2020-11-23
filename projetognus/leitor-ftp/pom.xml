@@ -128,8 +128,7 @@
 					<verbose>true</verbose>
 					<images>
 						<image>
-							<name>${registry.path}/${project.name}:${project.artifactId}-${git.commit.id.describe}
-							</name>
+							<name>${registry.path}/${project.artifactId}:${git.commit.id.describe}</name>
 							<build>
 								<tags>
 									<tag>latest</tag>

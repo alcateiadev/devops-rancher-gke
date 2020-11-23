@@ -22,7 +22,7 @@ spec:
         - name: dockerhub-credentials
       containers:
         - name: ${spring.application.name}
-          image: "${registry.path}/${project.name}:${project.artifactId}-${git.commit.id.describe}"
+          image: "${registry.path}/${project.artifactId}:${git.commit.id.describe}"
           livenessProbe:
             httpGet:
               path: /actuator/health
