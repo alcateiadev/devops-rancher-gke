@@ -20,7 +20,7 @@ jobs:
         java-version: 8
 
     - name: Leitor de FTP
-      run: mvn -f projetognus/leitor-ftp/pom.xml clean verify
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean install fabric8:resource fabric8:build
 
     - name: Leitor Vendedor
       run: mvn -f projetognus/leitor-vendedor/pom.xml clean verify  
