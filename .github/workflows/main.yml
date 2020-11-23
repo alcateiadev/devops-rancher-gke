@@ -20,13 +20,15 @@ jobs:
       with:
         java-version: 8
 
-    - name: Leitor de FTP
-      run: mvn -f projetognus/leitor-ftp/pom.xml clean install fabric8:resource fabric8:build
+    - name: Login to GitHub Registry Container
+      uses: docker/login-action@v1
       with:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: docker.pkg.github.com
-        tag_with_ref: true
+
+    - name: Leitor de FTP
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean install fabric8:resource fabric8:build
 
     - name: Leitor Vendedor
       run: mvn -f projetognus/leitor-vendedor/pom.xml clean verify  
