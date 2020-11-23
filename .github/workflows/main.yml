@@ -28,7 +28,7 @@ jobs:
         registry: docker.pkg.github.com
 
     - name: Leitor de FTP
-      run: mvn -f projetognus/leitor-ftp/pom.xml clean install fabric8:resource fabric8:build fabric8:deploy
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean install fabric8:resource fabric8:build fabric8:push
 
     - name: Leitor Vendedor
       run: mvn -f projetognus/leitor-vendedor/pom.xml clean verify  
