@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gnus-parent.iml" filepath="$PROJECT_DIR$/gnus-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gravar-venda/gravar-venda.iml" filepath="$PROJECT_DIR$/gravar-venda/gravar-venda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gravar-vendedor/gravar-vendedor.iml" filepath="$PROJECT_DIR$/gravar-vendedor/gravar-vendedor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leitor-ftp/leitor-ftp.iml" filepath="$PROJECT_DIR$/leitor-ftp/leitor-ftp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leitor-venda/leitor-venda.iml" filepath="$PROJECT_DIR$/leitor-venda/leitor-venda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leitor-vendedor/leitor-vendedor.iml" filepath="$PROJECT_DIR$/leitor-vendedor/leitor-vendedor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/processar-dados/processar-dados.iml" filepath="$PROJECT_DIR$/processar-dados/processar-dados.iml" />
+    </modules>
+  </component>
+</project>

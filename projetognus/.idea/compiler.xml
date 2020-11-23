@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gravar-venda" />
+        <module name="leitor-venda" />
+        <module name="processar-dados" />
+        <module name="leitor-vendedor" />
+        <module name="leitor-ftp" />
+        <module name="gravar-vendedor" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gnus-parent" target="1.5" />
+      <module name="gravar-venda" target="1.8" />
+      <module name="gravar-vendedor" target="1.8" />
+      <module name="leitor-ftp" target="1.8" />
+      <module name="leitor-venda" target="1.8" />
+      <module name="leitor-vendedor" target="1.8" />
+      <module name="processar-dados" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gravar-venda" options="-parameters" />
+      <module name="gravar-vendedor" options="-parameters" />
+      <module name="leitor-ftp" options="-parameters" />
+      <module name="leitor-venda" options="-parameters" />
+      <module name="leitor-vendedor" options="-parameters" />
+      <module name="processar-dados" options="-parameters" />
+    </option>
+  </component>
+</project>
