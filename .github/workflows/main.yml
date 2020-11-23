@@ -18,14 +18,24 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 8
+
     - name: Leitor de FTP
       run: mvn -f projetognus/leitor-ftp/pom.xml clean verify
+
     - name: Leitor Vendedor
       run: mvn -f projetognus/leitor-vendedor/pom.xml clean verify  
 
+    - name: Leitor Venda
+      run: mvn -f projetognus/leitor-venda/pom.xml clean verify    
 
+    - name: Gravar vendedor
+      run: mvn -f projetognus/gravar-vendedor/pom.xml clean verify    
 
+    - name: Gravar venda
+      run: mvn -f projetognus/gravar-venda/pom.xml clean verify      
 
+    - name: Processar dados
+      run: mvn -f projetognus/processar-dados/pom.xml clean verify      
 
     # - name: Upload Maven build artifact
     #   uses: actions/upload-artifact@v1
