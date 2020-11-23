@@ -28,6 +28,7 @@
 				<spring.application.name>${project.name}</spring.application.name>
 				<spring.application.port>8080</spring.application.port>
 				<registry.path>alcateiadev/devops-rancher-gke</registry.path>
+				<deployment.replicas>1</deployment.replicas>
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
