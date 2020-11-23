@@ -1,4 +1,4 @@
-FROM evoluumbr/microservice-base:t2b
+FROM openjdk:8-jre-alpine
 COPY maven /opt/app/
 WORKDIR /opt/app
 
