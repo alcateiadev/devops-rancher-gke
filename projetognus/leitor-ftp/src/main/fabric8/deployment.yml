@@ -22,7 +22,7 @@ spec:
         - name: dockerhub-credentials
       containers:
         - name: ${spring.application.name}
-          image: "${registry.host}/${registry.name}:${project.artifactId}-${git.commit.id.describe}"
+          image: "${registry.path}/${project.name}:${project.artifactId}-${git.commit.id.describe}"
           livenessProbe:
             httpGet:
               path: /actuator/health
@@ -54,6 +54,6 @@ spec:
                   name: ec-token
                   key: token
             - name: JAVA_OPTIONS
-              value: "-Djava.security.egd=file:/dev/./urandom -Delastic.apm.service_name=${spring.application.name} $(EC_COMMON_PARAMETERS) $(EC_TOKEN)"
+              value: "-Djava.security.egd=file:/dev/./urandom -Delastic.apm.service_name=${spring.application.name}"
             - name: SPRING_APPLICATION_NAME
               value: ${spring.application.name}
