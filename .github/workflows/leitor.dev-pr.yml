@@ -25,12 +25,15 @@ jobs:
     - name: Compilando
       run: mvn -f projetognus/leitor-ftp/pom.xml clean compile -DskipTests
 
-    - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    - name: Rodando os testes
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean test
 
-    - name: Test e Qualidade
-      run: mvn -f projetognus/leitor-ftp/pom.xml clean install
+    # - name: SonarQube Scan
+    #   uses: kitabisa/sonarqube-action@master
+    #   with:
+    #     host: http://sonar-alcateiadev.loca.lt/
+    #     #login: ${{ secrets.SONARQUBE_TOKEN }}
+
+    # - name: Test e Qualidade
+    #   run: mvn -f projetognus/leitor-ftp/pom.xml clean install -Dsonar.host.url=http://sonar-alcateiadev.loca.lt sonar:sonar
 
