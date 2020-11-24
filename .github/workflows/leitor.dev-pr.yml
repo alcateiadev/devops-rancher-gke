@@ -32,5 +32,5 @@ jobs:
         #login: ${{ secrets.SONARQUBE_TOKEN }}
 
     - name: Test e Qualidade
-      run: mvn -f projetognus/leitor-ftp/pom.xml clean test
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean test sonar:sonar
 
