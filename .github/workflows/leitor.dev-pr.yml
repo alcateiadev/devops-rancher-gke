@@ -28,9 +28,9 @@ jobs:
     - name: SonarQube Scan
       uses: kitabisa/sonarqube-action@master
       with:
-        host: http://e8e13eab0aaf.ngrok.io/
+        host: http://sonar-alcateiadev.loca.lt/
         #login: ${{ secrets.SONARQUBE_TOKEN }}
 
     - name: Test e Qualidade
-      run: mvn -f projetognus/leitor-ftp/pom.xml clean test -Dsonar.host.url=http://e8e13eab0aaf.ngrok.io/ sonar:sonar
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean test -Dsonar.host.url=http://sonar-alcateiadev.loca.lt/ sonar:sonar
 
