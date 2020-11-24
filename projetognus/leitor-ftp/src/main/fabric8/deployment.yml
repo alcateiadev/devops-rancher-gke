@@ -43,17 +43,7 @@ spec:
                 fieldRef:
                   apiVersion: v1
                   fieldPath: metadata.namespace
-            - name: EC_COMMON_PARAMETERS
-              valueFrom:
-               configMapKeyRef:
-                 name: ec-common-parameters 
-                 key: common
-            - name: EC_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: ec-token
-                  key: token
             - name: JAVA_OPTIONS
-              value: "-Djava.security.egd=file:/dev/./urandom -Delastic.apm.service_name=${spring.application.name}"
+              value: "-Djava.security.egd=file:/dev/./urandom -Delastic.apm.service_name=${spring.application.name} Dspring.profiles.active=${spring.profiles.active} "
             - name: SPRING_APPLICATION_NAME
               value: ${spring.application.name}

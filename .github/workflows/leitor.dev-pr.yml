@@ -1,0 +1,39 @@
+name: Projeto Gnus - Rancher
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    name: Leitor de FTP - PR
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/cache@v1
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-    
+
+    - name: Set up JDK 8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 8
+
+    - name: Compilando
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean compile -DskipTests
+
+    - name: Rodando os testes
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean test
+
+    # - name: SonarQube Scan
+    #   uses: kitabisa/sonarqube-action@master
+    #   with:
+    #     host: http://sonar-alcateiadev.loca.lt/
+    #     #login: ${{ secrets.SONARQUBE_TOKEN }}
+
+    # - name: Test e Qualidade
+    #   run: mvn -f projetognus/leitor-ftp/pom.xml clean install -Dsonar.host.url=http://sonar-alcateiadev.loca.lt sonar:sonar
+
