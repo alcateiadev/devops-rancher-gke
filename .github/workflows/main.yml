@@ -50,7 +50,7 @@ jobs:
         registry: docker.pkg.github.com
 
     - name: Gerando Docker e dando o Push
-      run: mvn -f projetognus/leitor-ftp/pom.xml clean install fabric8:resource fabric8:build fabric8:push
+      run: mvn -f projetognus/leitor-ftp/pom.xml -P hml clean install fabric8:resource fabric8:build fabric8:push
 
 
 
