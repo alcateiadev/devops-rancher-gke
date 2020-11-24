@@ -32,5 +32,5 @@ jobs:
         #login: ${{ secrets.SONARQUBE_TOKEN }}
 
     - name: Test e Qualidade
-      run: mvn -f projetognus/leitor-ftp/pom.xml clean install -Dsonar.host.url=http://sonar-alcateiadev.loca.lt/ sonar:sonar
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean install -Dsonar.host.url=http://sonar-alcateiadev.loca.lt sonar:sonar
 
