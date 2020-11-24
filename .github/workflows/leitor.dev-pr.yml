@@ -32,5 +32,5 @@ jobs:
         #login: ${{ secrets.SONARQUBE_TOKEN }}
 
     - name: Test e Qualidade
-      run: mvn -f projetognus/leitor-ftp/pom.xml clean test sonar:sonar
+      run: mvn -f projetognus/leitor-ftp/pom.xml clean test -Dsonar.host.url=http://e8e13eab0aaf.ngrok.io/ sonar:sonar
 
