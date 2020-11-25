@@ -57,12 +57,11 @@ jobs:
       with:
         args: set image --record deployment/my-app container=${{ github.repository }}:${{ github.sha }}
 
-        - name: verify deployment
+    - name: verify deployment
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_RANCHER }}
         KUBECTL_VERSION: "1.15"
-
 
     - name: Gerando Docker e dando o Push
       run: mvn -f projetognus/leitor-ftp/pom.xml -P hml clean install fabric8:resource fabric8:build fabric8:push fabric8:deploy
