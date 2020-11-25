@@ -50,11 +50,10 @@ jobs:
         registry: docker.pkg.github.com
 
 
-    - name: Kubernetes
-      uses: penDerGraft/run-k8s-job
-      with:
-        kubeconfig-file: '${{ secrets.KUBE_RANCHER }}' 
-        SERVICE_NAME: 'leitor-ftp (Suricato)'
+    - name: deploy to cluster
+      uses: steebchen/kubectl@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_RANCHER }}
 
     - name: Gerando Docker e dando o Push
       run: mvn -f projetognus/leitor-ftp/pom.xml -P hml clean install fabric8:resource fabric8:build fabric8:push
