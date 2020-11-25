@@ -42,7 +42,7 @@
 				<spring.application.name>${project.name}</spring.application.name>
 				<spring.application.port>8080</spring.application.port>
 				<registry.url>docker.pkg.github.com</registry.url>
-				<registry.path>alcateiadev/devops-rancher-gke-hml</registry.path>
+				<registry.path>alcateiadev/devops-rancher-gke</registry.path>
 				<deployment.replicas>1</deployment.replicas>
 				<spring.profiles.active>hml</spring.profiles.active>
 			</properties>
@@ -157,7 +157,7 @@
 					<verbose>true</verbose>
 					<images>
 						<image>
-							<name>${registry.url}/${registry.path}/${project.artifactId}:${git.commit.id.describe}</name>
+							<name>${registry.url}/${registry.path}/${project.artifactId}:${spring.profiles.active}${git.commit.id.describe}</name>
 							<build>
 								<tags>
 									<tag>latest</tag>
