@@ -50,7 +50,8 @@ jobs:
         registry: docker.pkg.github.com
 
 
-    - uses: penDerGraft/run-k8s-job 
+    - name: Kubernetes
+      uses: penDerGraft/run-k8s-job
       with:
         kubeconfig-file: '${{ secrets.KUBE_RANCHER }}' 
 
