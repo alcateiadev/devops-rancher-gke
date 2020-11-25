@@ -50,12 +50,9 @@ jobs:
         registry: docker.pkg.github.com
 
 
-    - name: Rancher Deploy
-      uses: yantadeu/rancher-deploy-action@v0.0.2
-      env:
-        RANCHER_ACCESS_KEY: 'token-ggsjb'
-        RANCHER_SECRET_KEY: '9h8b9hmztr4vlxjmd2q9wfsrvc7d6npkbslzk8n7j8hxclzbqjwgj9'
-        RANCHER_URL_API: 'https://rancher.alcateiadev.local/v3'
+    - uses: penDerGraft/run-k8s-job 
+      with:
+        kubeconfig-file: '${{ secrets.KUBE_RANCHER }}' 
 
     - name: Gerando Docker e dando o Push
       run: mvn -f projetognus/leitor-ftp/pom.xml -P hml clean install fabric8:resource fabric8:build fabric8:push
